@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: medicine
+  datasource:
+    url: jdbc:mysql://localhost:3306/mms?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    #driver-class-name: com.mysql.cj.jdbc.Driver #新版mysql连接器不需要指定驱动类
+
+server:
+  port: 9012
+
+# 自定义属性，eureka ip
+eurekaAddr: localhost
+
+eureka:
+  client:
+    serviceUrl:
+     defaultZone: http://${eurekaAddr}:8761/eureka/
+
