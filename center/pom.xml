@@ -13,6 +13,7 @@
     <description>spring 组件</description>
     <modules>
         <module>eureka</module>
+        <module>feign</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

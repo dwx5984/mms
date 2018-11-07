@@ -13,11 +13,7 @@
     <artifactId>eureka</artifactId>
 
     <name>eureka-server</name>
-    <description>Demo project for Spring Boot</description>
-
-
-
-
+    <description>Spring Cloud Eureka Server</description>
 
     <dependencies>
         <dependency>

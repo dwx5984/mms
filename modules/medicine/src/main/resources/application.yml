@@ -10,11 +10,9 @@ spring:
 server:
   port: 9012
 
-# 自定义属性，eureka ip
-eurekaAddr: localhost
 
 eureka:
   client:
     serviceUrl:
-     defaultZone: http://${eurekaAddr}:8761/eureka/
+     defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
 
