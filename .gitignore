@@ -17,3 +17,5 @@ modules/order/target/
 
 /center/feign/target/
 /center/eureka/target/
+/modules/bbs/bbs.iml
+/modules/medicine/target/

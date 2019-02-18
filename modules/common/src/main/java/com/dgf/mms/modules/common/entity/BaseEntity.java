@@ -1,5 +1,6 @@
 package com.dgf.mms.modules.common.entity;
 
+import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
  *
  * </p>
  */
+@Data
 public abstract class BaseEntity<T> implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -27,7 +29,7 @@ public abstract class BaseEntity<T> implements Serializable {
     /**
      * 删除标记
      */
-    protected String delFlag;
+    protected Integer delFlag;
 
     /**
      * 创建人

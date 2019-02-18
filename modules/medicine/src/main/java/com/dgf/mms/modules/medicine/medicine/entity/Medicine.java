@@ -20,7 +20,7 @@ import java.math.BigDecimal;
 @Data
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
-public class Medicine extends BaseEntity {
+public class Medicine extends BaseEntity<Medicine> {
     /**
      * 主键
      */
@@ -60,6 +60,5 @@ public class Medicine extends BaseEntity {
      * 药品价格
      */
     private BigDecimal price;
-
 
 }

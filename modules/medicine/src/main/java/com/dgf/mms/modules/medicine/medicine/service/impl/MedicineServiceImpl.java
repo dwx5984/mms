@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * <p>
- * 药品表 服务实现类
+ * 药品 服务实现类
  * </p>
  *
  * @author dengganfeng
