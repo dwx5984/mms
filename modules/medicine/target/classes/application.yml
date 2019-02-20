@@ -1,10 +1,10 @@
 spring:
   application:
     name: medicine
-  datasource:
-    url: jdbc:mysql://localhost:3306/mms?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
-    username: root
-    password: root
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/mms?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+#    username: root
+#    password: root
     #driver-class-name: com.mysql.cj.jdbc.Driver #新版mysql连接器不需要指定驱动类
 
 server:
@@ -17,12 +17,12 @@ eureka:
      defaultZone: http://localhost:8761/eureka/
       # ,http://peer2:8762/eureka/
 
-logging:
-  level:
-    com:
-      dgf:
-        mms:
-          modules:
-            medicine:
-              medicine:
-                mapper: debug
+#logging:
+#  level:
+#    com:
+#      dgf:
+#        mms:
+#          modules:
+#            medicine:
+#              medicine:
+#                mapper: debug

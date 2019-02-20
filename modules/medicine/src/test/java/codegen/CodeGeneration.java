@@ -1,5 +1,6 @@
 package codegen;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.Scanner;
 
 // 演示例子，执行 main 方法控制台输入模块表名回车自动生成对应项目目录中
+//搜索  改  查看那些地方需要配置
 public class CodeGeneration {
 
     /**
@@ -45,10 +47,15 @@ public class CodeGeneration {
         String projectPath = System.getProperty("user.dir");
 
         //改。。
-        gc.setOutputDir(projectPath + "/modules/medicine/src/main/java");
+//        gc.setOutputDir(projectPath + "/modules/medicine/src/main/java");
+        gc.setOutputDir(projectPath + "/modules/customer/src/main/java");
 
         gc.setAuthor("dengganfeng");
         gc.setOpen(false);
+        //开启swagger2
+        gc.setSwagger2(true);
+        //改
+        gc.setIdType(IdType.UUID);
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
@@ -65,10 +72,12 @@ public class CodeGeneration {
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(scanner("模块名"));
 
+
         /**
          * @apiNote 改
          */
-        pc.setParent("com.dgf.mms.modules.medicine");
+//        pc.setParent("com.dgf.mms.modules.medicine");
+        pc.setParent("com.dgf.mms.modules.customer");
 
         mpg.setPackageInfo(pc);
 
@@ -92,7 +101,9 @@ public class CodeGeneration {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名
-                return projectPath + "/modules/medicine/src/main/resources/mapper/" + pc.getModuleName()
+                //改
+//                return projectPath + "/modules/medicine/src/main/resources/mapper/" + pc.getModuleName()
+                return projectPath + "/modules/customer/src/main/resources/mapper/" + pc.getModuleName()
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
@@ -116,10 +127,12 @@ public class CodeGeneration {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.dgf.mms.modules.common.entity.BaseEntity");
+        //改
+        strategy.setSuperEntityClass("com.dgf.mms.modules.common.entity.BaseEntity<Customer>");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
-        strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
+        //改
+        strategy.setSuperControllerClass("com.dgf.mms.modules.common.controller.BaseController<Customer>");
         strategy.setInclude(scanner("表名"));
         strategy.setSuperEntityColumns("remarks");
         strategy.setSuperEntityColumns("delFlag");
