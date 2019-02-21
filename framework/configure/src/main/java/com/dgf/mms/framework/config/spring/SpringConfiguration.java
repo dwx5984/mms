@@ -13,8 +13,8 @@ import org.springframework.context.annotation.ImportResource;
  * @since 2019-02-20 23:29:10
  */
 @SpringBootConfiguration
-@ComponentScan("com.dgf.mms")
-@ImportResource("classpath*:/mms-spring-*.xml")
+@ComponentScan("com.dgf.mms.framework.config")
+//@ImportResource("classpath*:/mms-spring-*.xml")
 public class SpringConfiguration {
 
 }

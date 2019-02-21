@@ -19,8 +19,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EnableRedisHttpSession
 public class RedisConfiguration {
     @Bean
-    public static ConfigureRedisAction configureRedisAction()
-    {
+    public static ConfigureRedisAction configureRedisAction() {
         //让springSession不再执行config命令
         return ConfigureRedisAction.NO_OP;
     }

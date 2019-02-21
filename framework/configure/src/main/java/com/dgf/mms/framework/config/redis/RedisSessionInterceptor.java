@@ -3,6 +3,7 @@ package com.dgf.mms.framework.config.redis;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,15 +19,15 @@ import java.io.IOException;
  * @author dengganfeng
  * @since 2019-02-21 00:54:09
  */
-//拦截登录失效的请求
+@Component
 public class RedisSessionInterceptor implements HandlerInterceptor {
 
     @Value("${session.login.user.key}")
     private String sessionLoginKey;
 
-    //@Autowired
+    @Autowired
 
-    private StringRedisTemplate redisTemplate = new StringRedisTemplate();
+    private StringRedisTemplate redisTemplate;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
