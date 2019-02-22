@@ -11,6 +11,9 @@
 *.zip
 *.tar.gz
 *.rar
+*.mvn
+*mvnw*
+
 ### STS ###
 .apt_generated
 .classpath

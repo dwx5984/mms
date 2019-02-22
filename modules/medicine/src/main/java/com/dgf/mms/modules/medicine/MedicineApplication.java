@@ -43,7 +43,7 @@ public class MedicineApplication {
     public String login(HttpServletRequest request) {
 
             HttpSession session = request.getSession();
-            session.setAttribute("loginUserId", user);
+            session.setAttribute(user, user);
             redisTemplate.opsForValue().set(user, session.getId());
 
             return session.getId();

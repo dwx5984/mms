@@ -37,7 +37,7 @@ public class RedisSessionInterceptor implements HandlerInterceptor {
         if (session.getAttribute(sessionLoginKey) != null) {
             try {
                 //验证当前请求的session是否是已登录的session
-                String loginSessionId = redisTemplate.opsForValue().get("loginUser:" + (long) session.getAttribute(sessionLoginKey));
+                String loginSessionId = redisTemplate.opsForValue().get(session.getAttribute(sessionLoginKey));
                 if (loginSessionId != null && loginSessionId.equals(session.getId())) {
                     return true;
                 }
