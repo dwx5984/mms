@@ -17,6 +17,7 @@
         <module>common</module>
         <module>cache</module>
         <module>configure</module>
+        <module>auth</module>
     </modules>
     <parent>
         <groupId>com.dgf.mms</groupId>
@@ -29,6 +30,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.M1</spring-cloud.version>
+        <httpClient-version>4.5.7</httpClient-version>
     </properties>
 
 
@@ -40,6 +42,11 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpClient-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

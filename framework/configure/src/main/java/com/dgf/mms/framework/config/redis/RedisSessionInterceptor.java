@@ -25,6 +25,9 @@ public class RedisSessionInterceptor implements HandlerInterceptor {
     @Value("${session.login.user.key}")
     private String sessionLoginKey;
 
+    @Value("${mms.auth.url}")
+    private String authUrl;
+
     @Autowired
 
     private StringRedisTemplate redisTemplate;
@@ -42,25 +45,23 @@ public class RedisSessionInterceptor implements HandlerInterceptor {
                     return true;
                 }
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 e.printStackTrace();
             }
         }
-        response401(response);
+        goAuth(response);
         return false;
     }
 
-    private void response401(HttpServletResponse response) {
+    private void goAuth(HttpServletResponse response) {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json; charset=utf-8");
+        try {
+//            System.out.println("authUrl: "+authUrl);
+            //response.sendRedirect("/hello");
+            response.getWriter().write("123");
 
-        try
-        {
-            response.getWriter().print("401: 用户未登录！");
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

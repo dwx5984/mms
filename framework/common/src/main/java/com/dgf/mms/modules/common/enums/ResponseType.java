@@ -12,7 +12,8 @@ public enum ResponseType implements BaseEnum {
     OK(0, "请求成功", "请求成功"),
     ERROR(1, "系统错误", "系统错误"),
     SYSTEM_BUSY(2, "系统繁忙", "系统繁忙"),
-    ACCESS_ERROR(3, "访问数据出错", "访问数据出错")
+    ACCESS_ERROR(3, "访问数据出错", "访问数据出错"),
+    UNAUTH(4, "用户未登录", "用户未登录")
     ;
 
     private Integer value;

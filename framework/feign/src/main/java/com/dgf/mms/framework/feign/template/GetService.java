@@ -1,5 +1,6 @@
 package com.dgf.mms.framework.feign.template;
 
+import com.dgf.mms.modules.common.response.ResultDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -19,4 +20,7 @@ public interface GetService {
      */
     @RequestMapping("/hello")
     String getCustomers();
+
+    @RequestMapping("/customer/customer/get")
+    ResultDTO get();
 }

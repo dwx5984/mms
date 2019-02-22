@@ -13,10 +13,15 @@
     <groupId>com.dgf.mms.center</groupId>
     <artifactId>feign</artifactId>
 
-    <name>eureka-server</name>
-    <description>Spring Cloud Feign</description>
+    <name>Feign-server</name>
+    <description>客户端负载均衡</description>
 
     <dependencies>
+        <dependency>
+            <groupId>com.dgf.mms</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
